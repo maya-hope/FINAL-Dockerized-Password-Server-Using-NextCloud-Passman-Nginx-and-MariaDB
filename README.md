@@ -3,15 +3,6 @@
 
 ###### This project was completed in collaboration with Cecilia Combemale as part of my 8 week Software DevOps internship at Virtuagym, a Dutch fintess SaaS company. This repository serves as a de-identified record of my work.
 
-## Project Requirements
-The goal of this project was to create and deploy a password server on a custom domain. The basic requirements of the project were as follows:
-
-- The password management application hosted on the server must be open source
-- The application must be Dockerized
-- The server must be an AWS EC2 instance hosted on AWS ECS
-- All source code related to the project must be reviasable and stored in the company repository
-- The password server and application must be highly secure
-
 ## Repository Contents
 This repository consists of the following files:
 
