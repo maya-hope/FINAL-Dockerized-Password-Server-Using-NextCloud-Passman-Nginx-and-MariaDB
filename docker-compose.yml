@@ -1,0 +1,59 @@
+#version 2 of compose file format. All services, networks, and volumes declared in this format
+version: '2'
+
+#group of containers
+services:
+    
+  web:
+    #image built with dockerfile and nginx configurations in repo
+    image: nginxcustom7
+    container_name: nextcloud_webserver
+    ports:
+      - 80:80
+      - 443:443
+    links:
+      - app
+    volumes_from:
+      - app
+    environment:
+        #domain name 
+      - VIRTUAL_HOST=****.****.****
+      - VIRTUAL_NETWORK=nginx-proxy
+      - VIRTUAL_PORT=443 
+    
+    #always restart the container regardless of exit status. Docker daemon will try to restart the container indefinitely.     
+    restart: always
+
+  app:
+    #official nextcloud fpm image
+    image: nextcloud:fpm
+    container_name: nextcloud_fpm
+    links:
+      - db
+    volumes:
+    #sync local files with docker host files 
+      - ./nextcloud/apps:/var/www/html/apps
+      - ./nextcloud/config:/var/www/html/config
+      - ./nextcloud/data:/var/www/html/data
+   
+    depends_on:
+      - db
+    restart: always
+    
+  db:
+    #image from the community-developed fork of MySQL (MariaDB)
+    image: mariadb
+    container_name: db
+    volumes:
+      - ./nextcloud/db:/var/lib/mysql
+    environment:
+    #mandatory variable that specifies the password that will be set for the mySQL root super user account.
+      - MYSQL_ROOT_PASSWORD=*****
+    #specifies the name of the database when the image is started up
+      - MYSQL_DATABASE=*****
+    #creates a new user
+      - MYSQL_USER=*****
+    #sets new user’s password
+      - MYSQL_PASSWORD=****
+    restart: always
+
