@@ -1,0 +1,19 @@
+#!/bin/bash
+echo ECS_CLUSTER=***** >> /etc/ecs/ecs.config;
+echo ECS_BACKEND_HOST= >> /etc/ecs/ecs.config;
+
+sudo yum install aws-cli -y
+
+cd home/ec2-user/ 
+
+export AWS_ACCESS_KEY_ID=*******;
+export AWS_SECRET_ACCESS_KEY=*******;
+export AWS_DEFAULT_REGION=*****;
+
+
+mkdir /nextcloud
+
+mkdir /nextcloud/apps
+mkdir /nextcloud/config
+mkdir /nextcloud/data
+mkdir /nextcloud/db
