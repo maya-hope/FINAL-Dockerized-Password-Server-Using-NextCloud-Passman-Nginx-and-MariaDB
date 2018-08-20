@@ -29,8 +29,7 @@ The password server hosts the NextCloud application, which comes with the Passma
 ## Why Dockerization?
 This project involves Dockerizing the NextCloud application. Docker allows one to containerize their application. Docker container images are packages of software that include everything needed to run an application. At runtime, images become containers. Containers isolate software from its environment, and make it easier and faster to deploy applications.
 
-## AWS: Why and How
-This application is deployed and hosted using AWS. The server is an EC2 instance: EC2 provides resizable compute capacity in the cloud, and lets the user define a virtual environment with various features. The Docker container is deployed on ECS, and the images are stored in ECR. The SSL certificates necessary for the nginx server to function are stored in S3.
+## AWS
 
 The following AWS tools are utilized in the project:
 - EC2
