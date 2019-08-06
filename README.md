@@ -1,7 +1,7 @@
 # Building a Privately Hosted Password Server
 # Configurations For AWS Deployment of a Dockerized NextCloud Application With a MariaDB Database Behind an Nginx Reverse Proxy
 
-###### This project was completed in collaboration with Cecilia Combemale (https://github.com/cececombemale). This repository serves as a de-identified record of my work.
+###### I completed this project during my time working at an awesome fitness-tech company in Amsterdam! This repository serves as a de-identified record of my work.
 
 ## Repository Contents
 This repository consists of the following files:
